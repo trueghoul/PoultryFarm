@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d36313845581492c8d063e2d7a324f31" Name="Diagram1">
+        <EntityTypeShape EntityType="factoryModel.Accounts" Width="1.5" PointX="7.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Доходы_и_расходы" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Заказы" Width="1.5" PointX="7.5" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Клиенты" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Объекты" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Продукция" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Склады" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Сотрудники" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="factoryModel.Цеха_производства" Width="1.5" PointX="5.25" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="factoryModel.FK_Accounts_Клиенты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Заказы_Клиенты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Заказы_Объекты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Заказы_Продукция" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Склады_Объекты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Сотрудники_Объекты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Цеха_производства_Объекты" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Продукция_Склады" ManuallyRouted="false" />
+        <AssociationConnector Association="factoryModel.FK_Цеха_производства_Сотрудники" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

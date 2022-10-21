@@ -1,0 +1,73 @@
+﻿@model IEnumerable<courseproject.Models.Объекты>
+
+@{
+    ViewBag.Title = "Объекты";
+}
+
+<h2>Объекты птицефабрики</h2>
+<p>
+    @Html.ActionLink("Добавить новый объект", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Площадь)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Влажность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наличие_морозильных_камер)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Температура)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Склады.ID_объекта) Склады
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Цеха_производства.ID_объекта) Цеха
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_объекта)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Наименование)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Площадь)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Влажность)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Наличие_морозильных_камер)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Температура)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Склады.ID_объекта)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Цеха_производства.ID_объекта)
+    </td>
+    <td>
+        @Html.ActionLink("Изменить", "Edit", new { id = item.ID_объекта }) |
+        @Html.ActionLink("Удалить", "Delete", new { id = item.ID_объекта })
+    </td>
+</tr>
+}
+
+</table>

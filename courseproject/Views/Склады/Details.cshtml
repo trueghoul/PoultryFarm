@@ -1,0 +1,58 @@
+﻿@model courseproject.Models.Склады
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Склады</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Общая_вместимость)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Общая_вместимость)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Занято)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Занято)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Свободно)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Свободно)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Свободно_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Свободно_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты.Наименование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_объекта }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

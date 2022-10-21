@@ -1,0 +1,74 @@
+﻿@model courseproject.Models.Объекты
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Объекты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Площадь)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Площадь)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Влажность)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Влажность)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Наличие_морозильных_камер)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наличие_морозильных_камер)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Температура)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Температура)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Склады.ID_объекта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Склады.ID_объекта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Цеха_производства.ID_объекта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Цеха_производства.ID_объекта)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_объекта }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

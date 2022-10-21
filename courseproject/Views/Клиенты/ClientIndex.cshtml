@@ -1,0 +1,70 @@
+﻿@model IEnumerable<courseproject.Models.Клиенты>
+
+@{
+    ViewBag.Title = "Информация о Вас";
+}
+
+<h2>Информация о Вас</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование_Юридического_Лица)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ИНН)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ОГРН)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_телефона)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Начало_сотрудничества)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество_заказов)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование_Юридического_Лица)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ИНН)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ОГРН)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.e_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_телефона)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Начало_сотрудничества)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество_заказов)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "ClientEdit", new { id = item.Наименование_Юридического_Лица })
+            </td>
+        </tr>
+    }
+
+</table>

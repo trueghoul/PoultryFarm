@@ -1,0 +1,86 @@
+﻿@model IEnumerable<courseproject.Models.Продукция>
+
+@{
+    ViewBag.Title = "Продукция";
+}
+
+<h2>Продукция</h2>
+<hr />
+<h4>Управление продукцией.</h4>
+<p style="font-style:italic; margin-top: 10px;">Для списания продукции указывайте знак "-", для добавления "+".</p>
+<div class="roat">
+    <form action="/Продукция/ChangeProduct" method="post">
+        <input style="width:400px;" type="number" name="idProd" placeholder="ID продукции." />
+        <input style="width:400px;" type="number" name="Number" placeholder="Кол-во продукции (+/-)." />
+        <input type="submit" value="Обновить" />
+    </form>
+</div>
+<p style="font-style:italic; margin-top: 10px;">*Автоматически обновляет информацию соответствующих складов.</p>
+<hr />
+<p>
+    @Html.ActionLink("Добавить новую", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_продукции)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Тип_продукции)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Категория)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сорт)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Состав)
+        </th>
+        <th>
+            @Html.ActionLink("Количество", "PhiltrNumber")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Цена_за_единицу_товара)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Склады.ID_объекта) хранения
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_продукции)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Тип_продукции)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Категория)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Сорт)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Состав)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Цена_за_единицу_товара)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Склады.ID_объекта)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.ID_продукции }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID_продукции })
+            </td>
+        </tr>
+    }
+
+</table>

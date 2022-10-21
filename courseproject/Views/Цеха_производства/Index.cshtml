@@ -1,0 +1,65 @@
+﻿@model IEnumerable<courseproject.Models.Цеха_производства>
+
+@{
+    ViewBag.Title = "Цеха производства";
+}
+
+<h2>Цеха производства птицефабрики</h2>
+<p style="font-style:italic; margin-top: 10px;">*Каждый цех является одним из объектов птицефабрики.</p>
+<p style="font-style:italic; margin-top: 10px;">Общая информация относительно объектов находится в таблице @Html.ActionLink("\"Объекты\".", "Index", "Объекты")</p>
+
+<p>
+    @Html.ActionLink("Добавить новый", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Кол_во_сотрудников)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Общий_объем_инкубаторов)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объем_продукции_в_сутки)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия) начальника цеха
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_объекта)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Объекты.Наименование)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Кол_во_сотрудников)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Общий_объем_инкубаторов)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Объем_продукции_в_сутки)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Сотрудники.Фамилия)
+    </td>
+    <td>
+        @Html.ActionLink("Изменить", "Edit", new { id = item.ID_объекта }) |
+        @Html.ActionLink("Удалить", "Delete", new { id = item.ID_объекта })
+    </td>
+</tr>
+    }
+
+</table>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<courseproject.Models.Заказы>
+
+@{
+    ViewBag.Title = "Ваши заказы";
+}
+
+<h2>Ваши заказы</h2>
+<hr />
+<h4>Добавление заказа.</h4>
+<p style="font-style:italic; margin-top: 10px;">@Html.ActionLink("Продукция", "ClientIndex", "Продукция") птицефабрики.</p>
+<div class="roat">
+    <form action="/Заказы/NewOrder" method="post">
+        <input style="width:400px;" type="number" name="idProd" placeholder="ID продукции." />
+        <input style="width:400px;" type="number" name="Number" placeholder="Количество." />
+        <input type="submit" value="Заказать!" />
+    </form>
+</div>
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_заказа)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Собственный)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование_товара)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Итоговая_цена)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_заказа)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Клиенты.Наименование_Юридического_Лица)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Продукция.ID_продукции)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_заказа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Собственный)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование_товара)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Итоговая_цена)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_заказа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Клиенты.Наименование_Юридического_Лица)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Продукция.ID_продукции)
+            </td>
+        </tr>
+    }
+
+</table>

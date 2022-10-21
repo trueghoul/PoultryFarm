@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>@ViewBag.Message</h2>
+<br />
+<h4 style="font-style: italic; color:red;">Произошла непредвиденная ошибка. Изменения в таблице не были сохранены.</h4>
+<br />
+@Html.ActionLink("Вернуться к возможностям", "GetMyCapability", "Home")
+

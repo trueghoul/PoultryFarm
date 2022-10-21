@@ -1,0 +1,87 @@
+﻿@model courseproject.Models.Продукция
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись из таблицы?</h3>
+<div>
+    <h4>Продукция</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_продукции)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_продукции)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Тип_продукции)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Тип_продукции)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Категория)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Категория)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сорт)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сорт)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Состав)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Состав)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Цена_за_единицу_товара)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Цена_за_единицу_товара)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Склады.ID_объекта) хранения
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Склады.ID_объекта)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

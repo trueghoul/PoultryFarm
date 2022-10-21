@@ -1,0 +1,98 @@
+﻿@model IEnumerable<courseproject.Models.Заказы>
+
+@{
+    ViewBag.Title = "Заказы";
+}
+
+<h2>Заказы</h2>
+<hr />
+<h4>Поиск заказов заданного клиента:</h4>
+<div class="roat">
+    <form action="/Заказы/FindByName" method="post">
+        <input type="text" name="name" placeholder="Имя юр. лица" />
+        <input type="submit" value="Найти" />
+    </form>
+</div>
+<hr />
+<h4>Добавление заказа, если вы являетесь клиентом:</h4>
+<p style="font-style:italic; margin-top: 10px;">@Html.ActionLink("Продукция", "Index", "Продукция") птицефабрики.</p>
+<div class="roat">
+    <form action="/Заказы/NewOrder" method="post">
+        <input style="width:400px;" type="number" name="idProd" placeholder="ID продукции." />
+        <input style="width:400px;" type="number" name="Number" placeholder="Количество." />
+        <input style="width:400px;" type="text" name="name" placeholder="Наименование компании" />
+        <input type="submit" value="Заказать!" />
+    </form>
+</div>
+<hr />
+<p style="font-style:italic; margin-top: 10px;">@Html.ActionLink("Добавить собственный заказ", "Create").</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_заказа)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Собственный)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование_товара)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество)
+        </th>
+        <th>
+            @Html.ActionLink("Итоговая_цена", "PhiltrFinalPrice")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_заказа)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Клиенты.Наименование_Юридического_Лица)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование) объекта
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Продукция.ID_продукции)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_заказа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Собственный)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Наименование_товара)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Итоговая_цена)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_заказа)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Клиенты.Наименование_Юридического_Лица)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Объекты.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Продукция.ID_продукции)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.ID_заказа }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID_заказа })
+            </td>
+        </tr>
+    }
+
+</table>

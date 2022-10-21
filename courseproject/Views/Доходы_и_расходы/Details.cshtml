@@ -1,0 +1,82 @@
+﻿@model courseproject.Models.Доходы_и_расходы
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Доходы_и_расходы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Положительный)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Положительный)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Итоговая_сумма)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Итоговая_сумма)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Прибыль_от_продаж)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Прибыль_от_продаж)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Затраты_на_комбикорм)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Затраты_на_комбикорм)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Затраты_на_электроэнергию)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Затраты_на_электроэнергию)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Затраты_на_з_п_сотрудников)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Затраты_на_з_п_сотрудников)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Затраты_на_другое)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Затраты_на_другое)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_учёта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_учёта)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_периода }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

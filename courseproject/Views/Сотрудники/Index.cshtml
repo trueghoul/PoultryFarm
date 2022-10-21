@@ -1,0 +1,121 @@
+﻿@model IEnumerable<courseproject.Models.Сотрудники>
+
+@{
+    ViewBag.Title = "Сотрудники";
+}
+
+<h2>Сотрудники</h2>
+<hr />
+<h4>Изменении з/п сотрудника:</h4>
+<div class="roat">
+    <form action="/Сотрудники/ChangeSalary" method="post">
+        <input type="number" name="idEmpl" placeholder="ID сотрудника" />
+        <input type="number" name="newSalary" placeholder="Новая з/п" />
+        <input type="submit" value="Изменить" />
+    </form>
+</div>
+<hr />
+<div class="roat">
+    <form action="/Сотрудники/FindBySecondName" method="post">
+        <input type="text" name="sname" placeholder="Фамилия сотрудника" />
+        <input type="submit" value="Найти" />
+    </form>
+</div>
+<hr />
+<p>
+    @Html.ActionLink("Добавить сотрудника", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Серия_и_номер_паспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Должность)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_вступления_в_должность)
+        </th>
+        <th>
+            @Html.ActionLink("Зарплата", "PhiltrSalary")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_телефона)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование) объекта
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Серия_и_номер_паспорта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_вступления_в_должность)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Зарплата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.e_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_телефона)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Объекты.Наименование)
+            </td>
+            <td>
+                @Html.ActionLink("Изменить", "Edit", new { id = item.ID_сотрудника }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID_сотрудника })
+            </td>
+        </tr>
+    }
+
+</table>

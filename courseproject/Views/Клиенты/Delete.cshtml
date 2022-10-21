@@ -1,0 +1,87 @@
+﻿@model courseproject.Models.Клиенты
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись из таблицы?</h3>
+<div>
+    <h4>Клиенты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование_Юридического_Лица)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование_Юридического_Лица)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ИНН)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ИНН)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ОГРН)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ОГРН)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.e_mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Номер_телефона)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Номер_телефона)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Начало_сотрудничества)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Начало_сотрудничества)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество_заказов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество_заказов)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

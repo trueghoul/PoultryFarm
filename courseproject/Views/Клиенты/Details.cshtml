@@ -1,0 +1,74 @@
+﻿@model courseproject.Models.Клиенты
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Клиенты</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ИНН)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ИНН)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ОГРН)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ОГРН)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.e_mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.e_mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Номер_телефона)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Номер_телефона)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Начало_сотрудничества)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Начало_сотрудничества)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество_заказов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество_заказов)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Наименование_Юридического_Лица }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

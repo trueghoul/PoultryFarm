@@ -1,0 +1,58 @@
+﻿@model courseproject.Models.Цеха_производства
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Цеха_производства</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_сотрудников)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_сотрудников)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Общий_объем_инкубаторов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Общий_объем_инкубаторов)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ср__объем_продукции_в_сутки)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ср__объем_продукции_в_сутки)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сотрудники.Фамилия)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_объекта }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

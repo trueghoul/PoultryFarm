@@ -1,0 +1,70 @@
+﻿@model courseproject.Models.Цеха_производства
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись из таблицы?</h3>
+<div>
+    <h4>Цеха_производства</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_объекта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_объекта)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты.Наименование)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Кол_во_сотрудников)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Кол_во_сотрудников)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Общий_объем_инкубаторов)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Общий_объем_инкубаторов)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объем_продукции_в_сутки)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объем_продукции_в_сутки)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия) начальника цеха
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сотрудники.Фамилия)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<courseproject.Models.Продукция>
+
+@{
+    ViewBag.Title = "Продукция";
+}
+
+<h2>Продукция</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_продукции)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Тип_продукции)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Категория)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сорт)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Цена_за_единицу_товара)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID_продукции)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Тип_продукции)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Категория)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Сорт)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Цена_за_единицу_товара)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<courseproject.Models.Доходы_и_расходы>
+
+@{
+    ViewBag.Title = "Доходы и расходы";
+}
+
+<h2>Доходы и расходы</h2>
+<hr />
+    <h4>Автоматический подсчет доходов и расходов с момента последнего расчета:</h4>
+    <div class="roat">
+        <form action="/Доходы_и_расходы/Income" method="post">
+            <input style="width:400px;" type="number" name="electr" placeholder="Расходы на электричество" />
+            <input type="submit" value="Расчитать" />
+        </form>
+    </div>
+    <p style="font-style:italic; margin-top: 10px;">*Если с момента последнего расчета не прошел месяц, то зарплаты сотрудников не будут учтены.</p>
+    <hr />
+
+<p>
+    @Html.ActionLink("Добавить вручную", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_периода)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Положительный)
+        </th>
+        <th>
+            @Html.ActionLink("Итоговая_сумма", "PhiltrFinalSum")
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Прибыль_от_продаж)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Затраты_на_комбикорм)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Затраты_на_электроэнергию)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Затраты_на_з_п_сотрудников)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Затраты_на_другое)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_учёта)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.ID_периода)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Положительный)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Итоговая_сумма)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Прибыль_от_продаж)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Затраты_на_комбикорм)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Затраты_на_электроэнергию)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Затраты_на_з_п_сотрудников)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Затраты_на_другое)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Дата_учёта)
+    </td>
+    <td>
+        @Html.ActionLink("Изменить", "Edit", new { id = item.ID_периода }) |
+        @Html.ActionLink("Удалить", "Delete", new { id = item.ID_периода })
+    </td>
+</tr>
+}
+
+</table>

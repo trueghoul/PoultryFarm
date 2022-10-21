@@ -1,0 +1,95 @@
+﻿@model courseproject.Models.Заказы
+
+@{
+    ViewBag.Title = "Удаление";
+}
+
+<h2>Удаление</h2>
+
+<h3>Вы действительно хотите удалить эту запись из таблицы?</h3>
+<div>
+    <h4>Заказы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_заказа)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_заказа)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Собственный)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Собственный)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование_товара)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование_товара)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Итоговая_цена)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Итоговая_цена)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_заказа)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_заказа)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Клиенты.Наименование_Юридического_Лица)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Клиенты.Наименование_Юридического_Лица)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Продукция.ID_продукции)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Продукция.ID_продукции)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>
